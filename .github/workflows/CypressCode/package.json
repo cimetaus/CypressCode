@@ -49,9 +49,13 @@
     "semantic-release": "semantic-release",
     "prepare": "node .husky/install.mjs"
   },
+  "scripts": {
+  "cypress:open": "cypress open",
+  "cypress:run": "cypress run --record --762d224e-fc49-46bf-88a3-4b91ccd465c4"
+},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cypress-io/cypress-example-kitchensink.git"
+    "url": "git+https://github.com/cimetaus/CypressCode"
   },
   "author": "Cypress-io",
   "license": "MIT",
