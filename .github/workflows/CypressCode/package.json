@@ -49,7 +49,7 @@
     "semantic-release": "semantic-release",
     "prepare": "node .husky/install.mjs"
   },
-  "scripts": {
+  "script": {
   "cypress:open": "cypress open",
   "cypress:run": "cypress run --record --762d224e-fc49-46bf-88a3-4b91ccd465c4"
 },
