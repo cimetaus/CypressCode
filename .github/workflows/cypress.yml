@@ -1,0 +1,17 @@
+name: Cypress Tests
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Cypress Tests
+        run: npx cypress run --record
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.762d224e-fc49-46bf-88a3-4b91ccd465c4 }}
