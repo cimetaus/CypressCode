@@ -21,4 +21,3 @@ jobs:
 
       - name: Run Dashboard (command 2)
         run: npx cypress run --headed --spec cypress/e2e/BLU_NRG/Caf_Dashboard.spec.js --record --key 762d224e-fc49-46bf-88a3-4b91ccd465c4
-        
