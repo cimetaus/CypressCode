@@ -1,0 +1,37 @@
+name: Caf Sale
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js v23.7.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23.7.0
+
+      - name: Install Dependencies
+        run: |
+          npm install -g npm@latest
+          npm install cypress@14.0.3 --save-dev
+
+      - name: Verify Cypress Installation
+        run: npx cypress --version
+
+      - name: Run caf sale (Command 1)
+        run: npx cypress run --headed --spec cypress/e2e/BLU_NRG/Caf.spec.js --record --key 762d224e-fc49-46bf-88a3-4b91ccd465c4
+
+      - name: Run Dashboard (command 2)
+        run: npx cypress run --headed --spec cypress/e2e/BLU_NRG/Caf_Dashboard.spec.js --record --key 762d224e-fc49-46bf-88a3-4b91ccd465c4
+        
