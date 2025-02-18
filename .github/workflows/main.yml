@@ -15,6 +15,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  
+
+      - name: Set up Node.js v23.7.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23.7.0
+          
+      - name: Install dependencies with npm ci
+        run: npm ci
+
+      - name: Clear Cypress cache
+        run: npx cypress cache clear
+
+      - name: Install Cypress v14.0.3
+        run: npm install cypress@14.0.3 --save-dev
+    
+      - name: Checkout repository
+        uses: actions/checkout@v4
         
       - name: Verify Cypress Installation
         run: npx cypress --version
