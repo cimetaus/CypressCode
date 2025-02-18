@@ -1,0 +1,23 @@
+name: Caf Sale
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - feature/setup-cypress
+
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+
+    steps:
+      - name: Verify Cypress Installation
+        run: npx cypress --version
+
+      - name: Run caf sale (Command 1)
+        run: npx cypress run --headed --spec cypress/e2e/BLU_NRG/Caf.spec.js --record --key 762d224e-fc49-46bf-88a3-4b91ccd465c4
+
+      - name: Run Dashboard (command 2)
+        run: npx cypress run --headed --spec cypress/e2e/BLU_NRG/Caf_Dashboard.spec.js --record --key 762d224e-fc49-46bf-88a3-4b91ccd465c4
