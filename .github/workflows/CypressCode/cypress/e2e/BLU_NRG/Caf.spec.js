@@ -13,7 +13,7 @@ describe ('Energy', () => {
       cy.get('[class="sc-309fbc61-0 fMPLzp"]').eq(8).click();
       cy.get('[class="sc-309fbc61-0 fMPLzp"]').eq(10).click();
       cy.get('[type="checkbox"]').click();
-      cy.wait(2000);
+      // cy.wait(2000);
       cy.get('[class="sc-7f67791e-0 sc-7f67791e-1 khdfpI gqzmtj"]').click();                                           // click on submit after selecting all the answer the question
       cy.wait(2000);
       cy.get('[name="name"]').type('Apoorva Joshi');                 // Entering personal details on the popup
